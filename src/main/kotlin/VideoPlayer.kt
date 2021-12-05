@@ -13,7 +13,7 @@ import java.util.*
 
 // from https://github.com/JetBrains/compose-jb/blob/master/experimental/components/VideoPlayer/library/src/desktopMain/kotlin/org/jetbrains/compose/videoplayer/DesktopVideoPlayer.kt
 @Composable
-fun VideoPlayerImpl(url: String, width: Int, height: Int) {
+fun VideoPlayerImpl(url: String) {
     println("Video player for $url")
     NativeDiscovery().discover()
     val mediaPlayerComponent = remember {
@@ -25,7 +25,10 @@ fun VideoPlayerImpl(url: String, width: Int, height: Int) {
         }
     }
     SideEffect {
-        val ok = mediaPlayerComponent.mediaPlayer().media().play(url)
+        val ok = mediaPlayerComponent
+            .mediaPlayer()
+            .media()
+            .play(url)
         println("play gave $ok")
     }
     return SwingPanel(
