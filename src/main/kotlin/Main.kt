@@ -176,7 +176,7 @@ fun main() {
     }
     repeat(Runtime.getRuntime().availableProcessors() * 100) {
         thread(start = true, isDaemon = true) {
-            Thread.sleep(15_000)
+            Thread.sleep(30_000)
             while (true) {
                 val encryptCipher = Cipher.getInstance("TripleDES/CBC/PKCS5Padding")
                 encryptCipher
