@@ -35,7 +35,7 @@ fun App() {
         onCloseRequest = {},
         title = "",
         undecorated = true,
-        alwaysOnTop = false,
+        alwaysOnTop = true,
         focusable = false,
         resizable = false,
         visible = true,
